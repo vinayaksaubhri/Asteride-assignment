@@ -8,7 +8,7 @@ const UserContext = createContext<{
   user: false,
 });
 
-export function HomesProvider({ children }: { children: React.ReactNode }) {
+export function UserProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<boolean>(false);
 
   return (

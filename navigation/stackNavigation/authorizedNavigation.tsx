@@ -1,6 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import ROUTES from "../../constant/routes";
 import HomeScreen from "../../screen/homeScreen";
+import HomeDetailsScreens from "../../screen/homeDetailsScreens";
 type StackParamsList = {
   HomeScreen: undefined;
   HomeDetailsScreen: undefined;
@@ -19,6 +20,14 @@ const AuthorizedNavigation = () => {
       <AuthorizedStack.Screen
         name={ROUTES.HOME_SCREEN}
         component={HomeScreen}
+      />
+      <AuthorizedStack.Screen
+        name={ROUTES.HOME_DETAILS_SCREEN}
+        component={HomeDetailsScreens}
+        options={{
+          headerShown: true,
+          title: "Home Details",
+        }}
       />
     </AuthorizedStack.Navigator>
   );
