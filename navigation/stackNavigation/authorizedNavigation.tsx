@@ -24,10 +24,6 @@ const AuthorizedNavigation = () => {
       <AuthorizedStack.Screen
         name={ROUTES.HOME_DETAILS_SCREEN}
         component={HomeDetailsScreens}
-        options={{
-          headerShown: true,
-          title: "Home Details",
-        }}
       />
     </AuthorizedStack.Navigator>
   );

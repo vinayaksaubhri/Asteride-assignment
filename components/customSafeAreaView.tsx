@@ -1,25 +1,17 @@
 import { ReactNode } from "react";
 import {
   KeyboardAvoidingView,
-  Platform,
+  SafeAreaView,
   StatusBar,
   StatusBarStyle,
   StyleSheet,
-  View,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 type Props = {
   children?: ReactNode | null;
-  backgroundColor?: string;
-  barStyle?: StatusBarStyle | null | undefined;
 };
 
-const CustomSafeAreaView: React.FC<Props> = ({
-  children,
-  backgroundColor = "#fff",
-  barStyle,
-}) => {
+const CustomSafeAreaView: React.FC<Props> = ({ children }) => {
   const styles = StyleSheet.create({
     container: {
       flex: 1,

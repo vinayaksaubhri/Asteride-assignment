@@ -7,11 +7,13 @@ import {
   StyleSheet,
   Alert,
   ScrollView,
+  Pressable,
 } from "react-native";
 import * as Location from "expo-location";
 import { getDistance } from "geolib";
+import { FontAwesome } from "@expo/vector-icons";
 
-export default function HomeDetailsScreen({ route }) {
+export default function HomeDetailsScreen({ navigation, route }) {
   const { home } = route.params;
   const [userLocation, setUserLocation] = useState({
     latitude: 0,
@@ -65,6 +67,14 @@ export default function HomeDetailsScreen({ route }) {
 
   return (
     <ScrollView style={styles.container}>
+      <Pressable
+        style={styles.backButtonContainer}
+        onPress={() => {
+          navigation.goBack();
+        }}
+      >
+        <FontAwesome name="angle-left" size={24} color="black" />
+      </Pressable>
       <Image source={{ uri: home.imageUrl }} style={styles.image} />
       <View style={styles.detailsContainer}>
         <Text style={styles.address}>{home.address}</Text>
@@ -138,5 +148,18 @@ const styles = StyleSheet.create({
     color: "#d9534f",
     fontWeight: "bold",
     fontSize: 16,
+  },
+  backButtonContainer: {
+    width: 40,
+    height: 40,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 8,
+    borderWidth: 1,
+    position: "absolute",
+    zIndex: 1,
+    top: 10,
+    left: 10,
+    backgroundColor: "#fff",
   },
 });
