@@ -3,24 +3,21 @@ import { SafeAreaView, StyleSheet } from "react-native";
 import { HomesProvider } from "./hooks/useHomeData";
 import { UserProvider } from "./hooks/useUser";
 import Navigation from "./navigation";
+import CustomSafeAreaView from "./components/customSafeAreaView";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <UserProvider>
-        <HomesProvider>
-          <SafeAreaView style={styles.container}>
-            <Navigation />
-          </SafeAreaView>
-        </HomesProvider>
-      </UserProvider>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <UserProvider>
+          <HomesProvider>
+            <CustomSafeAreaView>
+              <Navigation />
+            </CustomSafeAreaView>
+          </HomesProvider>
+        </UserProvider>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
-});
