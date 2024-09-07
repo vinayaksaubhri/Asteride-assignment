@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "address": "123 Main St, Springfield",
+    "description": "A cozy 2-bedroom apartment with a great view of the city.",
+    "imageUrl": "https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "coordinates": {
+      "latitude": 37.7749,
+      "longitude": -122.4194
+    }
+  },
+  {
+    "id": 2,
+    "address": "456 Elm St, Shelbyville",
+    "description": "A beautiful 3-bedroom house with a spacious backyard.",
+    "imageUrl": "https://example.com/house2.jpghttps://images.unsplash.com/photo-1416331108676-a22ccb276e35?q=80&w=2667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "coordinates": {
+      "latitude": 37.7816,
+      "longitude": -122.4177
+    }
+  },
+  {
+    "id": 3,
+    "address": "789 Oak St, Capital City",
+    "description": "A modern 4-bedroom home located in the heart of downtown.",
+    "imageUrl": "https://images.unsplash.com/photo-1472224371017-08207f84aaae?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "coordinates": {
+      "latitude": 37.7924,
+      "longitude": -122.4101
+    }
+  },
+  {
+    "id": 4,
+    "address": "321 Maple Ave, North Haverbrook",
+    "description": "A charming 2-bedroom bungalow perfect for small families.",
+    "imageUrl": "https://images.unsplash.com/photo-1505819244306-ef53954f9648?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjAzfHxob21lfGVufDB8fDB8fHww",
+    "coordinates": {
+      "latitude": 37.7993,
+      "longitude": -122.4025
+    }
+  },
+  {
+    "id": 5,
+    "address": "654 Pine St, Ogdenville",
+    "description": "A large 5-bedroom house with a pool and garden.",
+    "imageUrl": "https://images.unsplash.com/photo-1465301055284-72f355cfd745?q=80&w=2603&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "coordinates": {
+      "latitude": 37.8037,
+      "longitude": -122.3981
+    }
+  }
+]
