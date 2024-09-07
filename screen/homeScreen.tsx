@@ -8,8 +8,9 @@ import {
 } from "react-native";
 import { useHomeData } from "../hooks/useHomeData";
 import HomeCard from "../components/homeCard";
+import ROUTES from "../constant/routes";
 
-const HomeScreen: React.FC = () => {
+const HomeScreen: React.FC = ({ navigation }) => {
   const { homes, fetchHomes, loading } = useHomeData();
 
   useEffect(() => {
@@ -27,12 +28,15 @@ const HomeScreen: React.FC = () => {
   return (
     <FlatList
       data={homes}
+      contentContainerStyle={styles.contentContainerStyle}
       keyExtractor={(item) => item.id.toString()}
+      showsVerticalScrollIndicator={false}
       renderItem={({ item }) => (
         <HomeCard
           home={item}
-          // onPress={() => navigation.navigate("HomeDetails", { home: item })}
-          onPress={() => console.log("Pressed")}
+          onPress={() =>
+            navigation.navigate(ROUTES.HOME_DETAILS_SCREEN, { home: item })
+          }
         />
       )}
     />
@@ -46,5 +50,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  contentContainerStyle: {
+    padding: 15,
   },
 });

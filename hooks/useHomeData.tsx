@@ -1,17 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import homesData from "../assets/homes.json"; // Mock data
 import { generateDelay } from "../utils";
-
-type homeDataType = {
-  id: number;
-  address: string;
-  description: string;
-  imageUrl: string;
-  coordinates: {
-    latitude: number;
-    longitude: number;
-  };
-};
+import { homeDataType } from "../types";
 
 const HomeContext = createContext<{
   homes: homeDataType[];
