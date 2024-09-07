@@ -1,22 +1,35 @@
-import { Platform, StyleSheet, ViewProps } from "react-native";
+import { ReactNode } from "react";
 import {
-  SafeAreaView,
-  useSafeAreaInsets,
-} from "react-native-safe-area-context";
-const CustomSafeAreaView: React.FC<ViewProps> = ({ children, ...rest }) => {
-  const { top, bottom } = useSafeAreaInsets();
+  KeyboardAvoidingView,
+  Platform,
+  StatusBar,
+  StatusBarStyle,
+  StyleSheet,
+  View,
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+
+type Props = {
+  children?: ReactNode | null;
+  backgroundColor?: string;
+  barStyle?: StatusBarStyle | null | undefined;
+};
+
+const CustomSafeAreaView: React.FC<Props> = ({
+  children,
+  backgroundColor = "#fff",
+  barStyle,
+}) => {
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+    },
+  });
   return (
-    <SafeAreaView
-      style={{
-        paddingTop: Platform.OS === "android" ? top : 0,
-        paddingBottom: Platform.OS === "android" ? bottom : 0,
-        flex: 1,
-      }}
-      {...rest}
-    >
-      {children}
-    </SafeAreaView>
+    <KeyboardAvoidingView style={styles.container} behavior="height">
+      <StatusBar />
+      <SafeAreaView style={styles.container}>{children}</SafeAreaView>
+    </KeyboardAvoidingView>
   );
 };
 export default CustomSafeAreaView;
-const styles = StyleSheet.create({});
