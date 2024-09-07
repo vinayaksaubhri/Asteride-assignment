@@ -1,16 +1,17 @@
 import NoInternet from "../components/noInternet";
 import useNetworkInfo from "../hooks/useNetworkInfo";
+import { useUser } from "../hooks/useUser";
 import AuthorizedNavigation from "./stackNavigation/authorizedNavigation";
 import UnAuthorizedNavigation from "./stackNavigation/unauthorizedNavigation";
 
 const Navigation = () => {
   const [isOnline, onPressReload] = useNetworkInfo();
-  //   const { isUserLoggedIn } = useUser();
-  const isUserLoggedIn = true;
+  const { user } = useUser();
+
   if (!isOnline) {
     return <NoInternet onPressReload={onPressReload} />;
   }
-  if (isUserLoggedIn) return <AuthorizedNavigation />;
+  if (user) return <AuthorizedNavigation />;
 
   return <UnAuthorizedNavigation />;
 };
