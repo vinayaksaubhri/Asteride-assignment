@@ -1,10 +1,16 @@
 import React, { useEffect } from "react";
-import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { useHomeData } from "../hooks/useHomeData";
+import HomeCard from "../components/homeCard";
 
 const HomeScreen: React.FC = () => {
   const { homes, fetchHomes, loading } = useHomeData();
-  console.log("🚀 ~ homes:", homes);
 
   useEffect(() => {
     fetchHomes();
@@ -19,9 +25,17 @@ const HomeScreen: React.FC = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <Text>Home Screen</Text>
-    </View>
+    <FlatList
+      data={homes}
+      keyExtractor={(item) => item.id.toString()}
+      renderItem={({ item }) => (
+        <HomeCard
+          home={item}
+          // onPress={() => navigation.navigate("HomeDetails", { home: item })}
+          onPress={() => console.log("Pressed")}
+        />
+      )}
+    />
   );
 };
 

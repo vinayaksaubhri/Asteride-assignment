@@ -13,7 +13,7 @@
     "id": 2,
     "address": "456 Elm St, Shelbyville",
     "description": "A beautiful 3-bedroom house with a spacious backyard.",
-    "imageUrl": "https://example.com/house2.jpghttps://images.unsplash.com/photo-1416331108676-a22ccb276e35?q=80&w=2667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "https://images.unsplash.com/photo-1416331108676-a22ccb276e35?q=80&w=2667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "coordinates": {
       "latitude": 37.7816,
       "longitude": -122.4177
