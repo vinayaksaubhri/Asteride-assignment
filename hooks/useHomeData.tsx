@@ -30,7 +30,7 @@ export function HomesProvider({ children }: { children: React.ReactNode }) {
   const fetchHomes = async () => {
     setLoading(true);
     try {
-      generateDelay(2000); // Simulate network delay
+      await generateDelay(2000); // Simulate network delay
       setHomes(homesData);
     } catch (error) {
       console.error(error);
